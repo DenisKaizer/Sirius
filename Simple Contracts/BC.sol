@@ -20,14 +20,10 @@ contract Ownable {
 
 contract BusinessCard is Ownable {
 
-  mapping (bytes32 => string) data;
+  mapping (bytes32 => string) public data;
 
   function setData(string key, string value) public onlyOwner {
-    data[keccak256(key)] = value;
-  }
-
-  function getData(string key) public constant returns(string) {
-    return data[keccak256(key)];
+    data[key] = value;
   }
 
 }
