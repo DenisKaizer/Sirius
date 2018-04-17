@@ -13,7 +13,7 @@ contract Ownable {
   }
 
   function transferOwnership(address newOwner) public onlyOwner {
-  owner = newOwner;
+    owner = newOwner;
   }
 
 }
@@ -22,7 +22,7 @@ contract BusinessCard is Ownable {
 
   mapping (bytes32 => string) public data;
 
-  function setData(string key, string value) public onlyOwner {
+  function setData(bytes32 key, string value) public onlyOwner {
     data[key] = value;
   }
 

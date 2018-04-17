@@ -21,7 +21,7 @@ contract HelloWorld {
 contract SetGet {
 
   mapping (uint256 => string) public data;
-  //mapping (uint256 => string) public data;
+  //mapping (bytes32 => string) public data;
 
 
   function setData(uint256 key ,string newData) public {
