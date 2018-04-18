@@ -4,7 +4,7 @@ pragma solidity ^0.4.21;
 contract BiggerLess {
 
   uint256 number;
-  address public Dima = 0x6B35d857486800768b5878eE2F827D7046a7dd6E;
+  address Dima;
 
   function setNumber(uint256 _number) {
     require(msg.sender == Dima);
@@ -12,7 +12,7 @@ contract BiggerLess {
   }
 
 
-  function tryNumber(uint256 _number) view returns(string) {
+  function try(uint256 _number) view returns(string) {
     if (_number == number) {
       return("Right");
     }
@@ -30,7 +30,5 @@ contract BiggerLess {
     }
   }
 
-  function() payable{
-
-  }
+  function() payable;
 }
