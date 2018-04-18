@@ -30,7 +30,7 @@ contract BiggerLess {
     }
   }
 
-  function() payable{
+  function() payable {
 
   }
 }
