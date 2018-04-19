@@ -3,7 +3,8 @@ pragma solidity ^0.4.21;
 
 contract BiggerLess {
 
-  uint256 number;
+  uint8 number;
+  uint8 _seed;
 
   function BiggerLess() {
     number = random(100);
@@ -12,7 +13,7 @@ contract BiggerLess {
   
   function random(uint8 upper) internal returns (uint8 randomNumber) { // must be interna
     
-    uint8 _seed = uint8(keccak256(block.blockhash(block.number), _seed));
+    _seed = uint8(keccak256(block.blockhash(block.number), _seed));
     return _seed % upper + 1;
   }
 
