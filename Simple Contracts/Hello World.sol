@@ -4,13 +4,17 @@ pragma solidity ^0.4.21;
 contract BiggerLess {
 
   uint256 number;
-  address public Dima = 0x6B35d857486800768b5878eE2F827D7046a7dd6E;
 
-  function setNumber(uint256 _number) {
-    require(msg.sender == Dima);
-    number = _number;
+  function BiggerLess() {
+    number = random(100);
   }
-
+  
+  
+  function random(uint8 upper) internal returns (uint8 randomNumber) { // must be interna
+    
+    uint8 _seed = uint8(keccak256(block.blockhash(block.number), _seed));
+    return _seed % upper + 1;
+  }
 
   function tryNumber(uint256 _number) view returns(string) {
     if (_number == number) {
