@@ -13,7 +13,7 @@ contract BiggerLess {
   
   function random(uint256 upper) internal returns (uint256 randomNumber) { // must be interna
     
-    _seed = uint256(keccak256(block.blockhash(block.number)));
+    _seed = uint256(keccak256(block.blockhash(block.number), _seed));
     return _seed % upper + 1;
   }
 
